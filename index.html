@@ -23,6 +23,11 @@
 		</script>
 
 		<style>
+
+			.fragmentOverlap {
+				margin-top: -300px !important;
+			}
+
 			.reveal {
 				font-size: 58px;
 			}
@@ -127,6 +132,9 @@
 			.flexso_white {
 				background-image: url(images/flexso_white.png) !important;
 			}
+			.avatar {
+				border-radius: 50%;
+			}
 		</style>
 	</head>
 	<body>
@@ -136,10 +144,33 @@
 				<div class="sap"></div>
 			</div>
 			<div class="slides">
+				<section data-background-color="#000">
+					<div class="ui5con-title ui5con-left">
+						<div>Lessons learned about working with</div>
+						<div class="ui5con-orange">Components and Composite Controls</div>
+					</div>
+
+					<div class="ui5con-logo"></div>
+
+					<div class="ui5con-speakertitle">
+						Robin Panneels, Canguru Solutions<br>
+						February 14, 2020
+					</div>
+				</section>
+
+				<section data-background-color="white">
+					<div>
+						<h2>Last week this happened</h2>
+						<p class="fragment"><img src="images/openui5_tweet.png" width="800" style="margin-top: 100px auto; border: 0"></p>
+						<p class="fragment fragmentOverlap"><img src="images/tweet_tom.png" width="800" style="margin-top:50px auto; margin-left: 100px auto; border: 0"></p>
+					</div>
+				</section>
+
+				<section data-background-image="https://media.giphy.com/media/9Dtye59YLYQpIwQWpv/giphy.gif"></section>
 
 				<section data-background-color="#000">
 					<div class="ui5con-title ui5con-left">
-						<div>Components and composite controls</div>
+						<div>Reusable Components</div>
 						<div class="ui5con-orange">lessons learned</div>
 					</div>
 
@@ -151,9 +182,43 @@
 					</div>
 				</section>
 
-				<section data-background-color="#000">
-					<h2 class="ui5con-divider">Divider <span class="ui5con-orange">page</span></h2>
+				<section data-background-color="white">
+					<div>
+						<img src="images/rpanneel.jpg" alt="Avatar" class="avatar">
+						<!--<img src="images/canguru-logo-long.jpg">-->
+						<h1>I&apos;m Robin Panneels</h1>
+						<p>Technical Consultant at Canguru Solutions</p>
+					</div>
 				</section>
+
+				<section data-background-color="white">
+					<div>
+						<p style="font-size:60px;">These slides and the code examples will be available <br>shortly after this talk. I&apos;ll tweet the
+							link out.</p><img src="images/twitter-512.png" width="300" style="margin:100px auto; border: 0">
+							<h2><a href="http://twitter.com/rpanneel" target="_blank">@rpanneel</a></h2>
+					</div>
+				</section>
+
+				<section data-background-color="white">
+					<h2 class="ui5con-divider">Who already implemented reusable Components?</h2>
+				</section>
+
+				<section data-background-color="white">
+					<h2 class="ui5con-divider">What is a <span class="ui5con-orange">Component?</span></h2>
+				</section>
+
+				<section data-background-color="white">
+					Every <span class="ui5con-orange">UI5 application</span> is a <span class="ui5con-orange">Component</span>!
+					<p class="fragment">Because we always extend:</p>
+					<p class="fragment"><a href="https://ui5.sap.com/#/api/sap.ui.core.Component" target="_blank">sap.ui.core.Component</a></p>
+					<p class="fragment">or</p>
+					<p class="fragment"><a href="https://ui5.sap.com/#/api/sap.ui.core.UIComponent" target="_blank">sap.ui.core.UIComponent</a></p>
+				</section>
+
+				<section data-background-color="white">
+					<h2>So every UI5 application can be reused in another application</h2>
+				</section>
+
 
 				<section>
 					<h3>Standard Page</h3>
@@ -197,13 +262,13 @@
 				</section>
 
 				<section data-background-color="#000">
-					<div class="ui5con-thankyou ui5con-orange">Thank you.</div>
+					<div class="ui5con-thankyou ui5con-orange">Thank you!</div>
 					<div class="ui5con-logo"></div>
 					<div class="ui5con-speakerdetails">
 							Contact information:<br><br>
-							#First name Last name#<br>
-							#title#<br>
-							#contact data#<br>
+							Robin Panneels<br>
+							Technical Consultant at Canguru Solutions<br>
+							Twitter: <a href="https://www.twitter.com/rpanneel" target="_blank">@rpanneel</a><br>
 					</div>
 				</section>
 			</div>
