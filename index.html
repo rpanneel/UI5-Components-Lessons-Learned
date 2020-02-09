@@ -171,7 +171,7 @@
 				<section data-background-color="#000">
 					<div class="ui5con-title ui5con-left">
 						<div>Reusable Components</div>
-						<div class="ui5con-orange">lessons learned</div>
+						<div class="ui5con-orange">Deep Dive</div>
 					</div>
 
 					<div class="ui5con-logo"></div>
@@ -186,29 +186,26 @@
 					<div>
 						<img src="images/rpanneel.jpg" alt="Avatar" class="avatar">
 						<!--<img src="images/canguru-logo-long.jpg">-->
-						<h1>I&apos;m Robin Panneels</h1>
+						<h2>I&apos;m Robin Panneels</h2>
 						<p>Technical Consultant at Canguru Solutions</p>
+						<p>
+							<small><a href="https://twitter.com/rpanneel">@rpanneel</a></small>
+							<br />
+							<small>Grab this session from <a href="https://github.com/rpanneel/UI5-Components-Lessons-Learned">GitHub</a></small>
+						</p>
 					</div>
 				</section>
 
 				<section data-background-color="white">
-					<div>
-						<p style="font-size:60px;">These slides and the code examples will be available <br>shortly after this talk. I&apos;ll tweet the
-							link out.</p><img src="images/twitter-512.png" width="300" style="margin:100px auto; border: 0">
-							<h2><a href="http://twitter.com/rpanneel" target="_blank">@rpanneel</a></h2>
-					</div>
+					<h3 class="ui5con-divider">Who already implemented reusable Components?</h3>
+				</section>
+
+				<section data-background-color="white" data-transition="zoom">
+					<h3 class="ui5con-divider">What is a <span class="ui5con-orange">Component?</span></h3>
 				</section>
 
 				<section data-background-color="white">
-					<h2 class="ui5con-divider">Who already implemented reusable Components?</h2>
-				</section>
-
-				<section data-background-color="white">
-					<h2 class="ui5con-divider">What is a <span class="ui5con-orange">Component?</span></h2>
-				</section>
-
-				<section data-background-color="white">
-					Every <span class="ui5con-orange">UI5 application</span> is a <span class="ui5con-orange">Component</span>!
+					<h3>Every <span class="ui5con-orange">UI5 application</span> is a <span class="ui5con-orange">Component</span>!</h3>
 					<p class="fragment">Because we always extend:</p>
 					<p class="fragment"><a href="https://ui5.sap.com/#/api/sap.ui.core.Component" target="_blank">sap.ui.core.Component</a></p>
 					<p class="fragment">or</p>
@@ -216,49 +213,95 @@
 				</section>
 
 				<section data-background-color="white">
-					<h2>So every UI5 application can be reused in another application</h2>
+					<h3>UI5 applications can be reused in another application</h3>
+					<p class="fragment">In this case we have a <span class="ui5con-orange">rootView</span></p>
 				</section>
 
-
-				<section>
-					<h3>Standard Page</h3>
-					Content
-					<p class="fragment">...and more...</p>
-					<p class="fragment">...content.</p>
-				</section>
-
-				<section data-markdown>
-					<textarea data-template>
-						### Markdown Page
-
-						A paragraph with some text and a [link](https://openui5.org).
-					</textarea>
-				</section>
-
-				<section>
-					<section>
-						<h3>Vertical Page 1</h3>
-						Content
-					</section>
-					<section>
-						<h3>Vertical Page 2</h3>
-						Content
-					</section>
-				</section>
-
-				<section>
-					<h3> Page With Code</h3>
-					Some Code:
+				<section data-background-color="white">
+					<h3>But we can also expose a <span class="ui5con-orange">Control</span></h3>
+					See metadata of sap.ui.core.UIComponent:
 					<pre>
-						<code data-trim data-noescape>
-							var btn = new sap.m.Button({
-							   text: 'Hello World',
-							   press: function(){
-							      <mark>alert("Hello");</mark>
-							   }
-							});
+						<code data-trim data-noescape data-line-numbers="4,13" class="stretch">
+							...
+							metadata : {
+								"abstract": true,
+								rootView : null, // the rootView to open
+								publicMethods: [ "render" ],
+								aggregations: {
+									/**
+									 * The root control of the UIComponent.
+									 *
+									 * The root control should be created inside the function
+									 * <mark>{@link sap.ui.core.UIComponent#createContent}</mark>.
+									 */
+									"rootControl": { 
+										type: "sap.ui.core.Control",
+										multiple: false, 
+										visibility: "hidden" 
+									}
+								},
+								...
+							}
 						</code>
 					</pre>
+				</section>
+
+
+				<section data-background-color="white">
+					<h3>Use-cases for reusable Components</h3>
+					<ul>
+						<li class="fragment roll-in">Search helps/Value Help Dialogs</li>
+						<li class="fragment roll-in">Information Dialog views</li>
+						<li class="fragment roll-in">Lists and Tables</li>
+					</ul>
+					<br />
+					<small class="fragment">More information can be found on <a href="https://www.nabisoft.com/tutorials/sapui5/implementing-re-use-components-in-sapui5-libraries-and-consuming-them-in-sapui5-apps#Step3">Nabi Zamani's website</a></small>
+				</section>
+
+				<section data-background-image="images/lego-bricks.png">
+				</section>
+
+				<section data-background-color="white">
+					<h3>Components <span class="ui5con-orange">Vs</span> Controls</h3>
+					<p class="fragment roll-in">Components can create models and work with Back-ends</p>
+					<p class="fragment roll-in">Controls can't</p>
+				</section>
+
+				<section data-background-color="white">
+					<h3>Reusable Component example: <span class="ui5con-orange">AttachmentManager</span></h3>
+					<h4 class="fragment roll-in">Initial goals:</h4>
+					<ul>
+						<li class="fragment roll-in">Wrapper for UploadCollection</li>
+						<li class="fragment roll-in">UploadSet implementation</li>
+						<li class="fragment roll-in">Standardize working with attachments and links</li>
+					</ul>
+				</section>
+
+				<section data-background-color="white">
+					<h3>You can also go to far with implementing reusable components</h3>
+					<p class="fragment roll-in">
+						You can propagate the models from the application to the <a href="https://ui5.sap.com/#/api/sap.ui.core.ComponentContainer%23controlProperties">ComponentContainer</a>
+						<br />
+						So the risk exists that you make a Reusable Component app dependent...
+					</p>
+				</section>
+
+				<section data-background-color="white">
+					<img src="images/component-too-far1.png" style="border: 0;">
+				</section>
+
+				<section data-background-color="white">
+					<img src="images/component-too-far2.png" style="border: 0;">
+				</section>
+
+				<section data-background-color="white">
+					<h3>Routing in <span class="ui5con-orange">Nested Components</span> in 1.60</h3>
+					<p class="fragment"><a href="https://blogs.sap.com/2019/08/23/ui5-nested-routing-with-reusable-components/">Tom Van Doorslaer's post</a></p>
+				</section>
+
+				<section data-background-color="white">
+					<h3>Routing in <span class="ui5con-orange">Nested Components</span> from 1.72</h3>
+					<p class="fragment"><a href="https://blogs.sap.com/2020/02/05/ui5er-buzz-46-routing-with-nested-components/">Jiawei Cao's post</a></p>
 				</section>
 
 				<section data-background-color="#000">
