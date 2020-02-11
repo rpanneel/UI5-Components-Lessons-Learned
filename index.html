@@ -1,226 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>UI5con Belgium 2020</title>
+    <title>UI5con Belgium 2020</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <link rel="stylesheet" href="css/theme/white.css" />
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.type = "text/css";
+      link.href = window.location.search.match(/print-pdf/gi)
+        ? "css/print/pdf.css"
+        : "css/print/paper.css";
+      document.getElementsByTagName("head")[0].appendChild(link);
+    </script>
 
-		<style>
+    <style>
+      .fragmentOverlap {
+        margin-top: -300px !important;
+      }
 
-			.fragmentOverlap {
-				margin-top: -300px !important;
-			}
+      .reveal {
+        font-size: 58px;
+      }
+      .reveal,
+      .reveal h1,
+      .reveal h2,
+      .reveal h3,
+      .reveal h4,
+      .reveal h5,
+      .reveal h6 {
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: none;
+      }
+      .ui5con-alignleft .slides section,
+      .ui5con-alignleft .slides section > section {
+        text-align: start;
+      }
+      .reveal code,
+      .reveal pre {
+        font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console",
+          "Lucida Sans Typewriter", "DejaVu Sans Mono",
+          "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco,
+          "Courier New", Courier, monospace;
+      }
 
-			.reveal {
-				font-size: 58px;
-			}
-			.reveal,
-			.reveal h1,
-			.reveal h2,
-			.reveal h3,
-			.reveal h4,
-			.reveal h5,
-			.reveal h6 {
-				font-family: Arial, Helvetica, sans-serif;
-				text-transform: none;
-			}
-			.ui5con-alignleft .slides section,
-			.ui5con-alignleft .slides section > section {
-				text-align: start;
-			}
-			.reveal code,
-			.reveal pre {
-				font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
-			}
+      .ui5con-orange {
+        color: rgb(240, 171, 0);
+      }
+      .ui5con-title {
+        width: 48%;
+        text-align: start;
+        padding-left: 1%;
+        padding-top: 2%;
+        margin-left: 0;
+        font-size: 72px;
+        font-weight: bold;
+      }
+      .ui5con-speakertitle {
+        font-size: 30px;
+        text-align: start;
+        padding-left: 1%;
+        padding-top: 5%;
+      }
+      .ui5con-aligntop .ui5con-title {
+        padding-top: 20%;
+      }
+      .ui5con-logo {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        right: 2%;
+        top: 0;
+        background-image: url(images/UI5con.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .ui5con-aligntop .ui5con-logo {
+        top: 44%;
+      }
+      h2.ui5con-divider {
+        text-align: start;
+        font-size: 92px;
+        padding-left: 2%;
+      }
+      .ui5con-aligntop h2.ui5con-divider {
+        padding-top: 23%;
+      }
+      .ui5con-thankyou {
+        font-size: 120px;
+        font-weight: bold;
+        text-align: start;
+        padding-left: 2%;
+      }
+      .ui5con-aligntop .ui5con-thankyou {
+        padding-top: 12%;
+      }
+      .ui5con-speakerdetails {
+        font-size: 36px;
+        text-align: start;
+        padding-top: 5%;
+        padding-left: 2%;
+      }
+      .ui5con-sponsors .canguru {
+        width: 7%;
+        height: 7%;
+        position: absolute;
+        left: 1%;
+        bottom: 0.5%;
+        background-image: url(images/can.log.black.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 1;
+      }
+      .canguru_white {
+        background-image: url(images/can.log.white.png) !important;
+      }
+      .avatar {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="ui5con-sponsors">
+        <div class="canguru"></div>
+      </div>
+      <div class="slides">
+        <section data-background-color="#000" data-state="first_slide">
+          <div class="ui5con-title ui5con-left">
+            <div>Lessons learned about working with</div>
+            <div class="ui5con-orange">Components and Composite Controls</div>
+          </div>
 
-			.ui5con-orange {
-				color: rgb(240, 171, 0);
-			}
-			.ui5con-title {
-				width: 48%;
-				text-align: start;
-				padding-left: 1%;
-				padding-top: 2%;
-				margin-left: 0;
-				font-size: 72px;
-				font-weight: bold;
-			}
-			.ui5con-speakertitle {
-				font-size: 30px;
-				text-align: start;
-				padding-left: 1%;
-				padding-top: 5%;
-			}
-			.ui5con-aligntop .ui5con-title {
-				padding-top: 20%;
-			}
-			.ui5con-logo {
-				width: 50%;
-				height: 100%;
-				position: absolute;
-				right: 2%;
-				top: 0;
-				background-image: url(images/UI5con.png);
-				background-repeat: no-repeat;
-				background-size: contain;
-			}
-			.ui5con-aligntop .ui5con-logo {
-				top: 44%;
-			}
-			h2.ui5con-divider {
-				text-align: start;
-				font-size: 92px;
-				padding-left: 2%;
-			}
-			.ui5con-aligntop h2.ui5con-divider {
-				padding-top: 23%;
-			}
-			.ui5con-thankyou {
-				font-size: 120px;
-				font-weight: bold;
-				text-align: start;
-				padding-left: 2%;
-			}
-			.ui5con-aligntop .ui5con-thankyou {
-				padding-top: 12%;
-			}
-			.ui5con-speakerdetails {
-				font-size: 36px;
-				text-align: start;
-				padding-top: 5%;
-				padding-left: 2%;
-			}
-			.ui5con-sponsors .flexso {
-				width: 5%;
-				height: 5%;
-				position: absolute;
-				left: 1%;
-				bottom: 1%;
-				background-image: url(images/flexso_grey.png);
-				background-repeat: no-repeat;
-				background-size: contain;
-				z-index: 1;
-			}
-			.ui5con-sponsors .sap {
-				width: 5%;
-				height: 5%;
-				position: absolute;
-				right: 7%;
-				bottom: 1%;
-				background-image: url(images/sap.png);
-				background-repeat: no-repeat;
-				background-size: contain;
-				z-index: 1;
-			}
-			.flexso_white {
-				background-image: url(images/flexso_white.png) !important;
-			}
-			.avatar {
-				border-radius: 50%;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="ui5con-sponsors">
-				<div class="flexso"></div>
-				<div class="sap"></div>
-			</div>
-			<div class="slides">
-				<section data-background-color="#000">
-					<div class="ui5con-title ui5con-left">
-						<div>Lessons learned about working with</div>
-						<div class="ui5con-orange">Components and Composite Controls</div>
-					</div>
+          <div class="ui5con-logo"></div>
 
-					<div class="ui5con-logo"></div>
+          <div class="ui5con-speakertitle">
+            Robin Panneels, Canguru Solutions<br />
+            February 14, 2020
+          </div>
+        </section>
 
-					<div class="ui5con-speakertitle">
-						Robin Panneels, Canguru Solutions<br>
-						February 14, 2020
-					</div>
-				</section>
+        <section data-background-color="white">
+          <div>
+            <h2>Last week this happened</h2>
+            <p class="fragment">
+              <img
+                src="images/openui5_tweet.png"
+                width="800"
+                style="margin-top: 100px auto; border: 0"
+              />
+            </p>
+            <p class="fragment fragmentOverlap">
+              <img
+                src="images/tweet_tom.png"
+                width="800"
+                style="margin-top:50px auto; margin-left: 100px auto; border: 0"
+              />
+            </p>
+          </div>
+        </section>
 
-				<section data-background-color="white">
-					<div>
-						<h2>Last week this happened</h2>
-						<p class="fragment"><img src="images/openui5_tweet.png" width="800" style="margin-top: 100px auto; border: 0"></p>
-						<p class="fragment fragmentOverlap"><img src="images/tweet_tom.png" width="800" style="margin-top:50px auto; margin-left: 100px auto; border: 0"></p>
-					</div>
-				</section>
+        <section
+          data-background-image="https://media.giphy.com/media/9Dtye59YLYQpIwQWpv/giphy.gif"
+        ></section>
 
-				<section data-background-image="https://media.giphy.com/media/9Dtye59YLYQpIwQWpv/giphy.gif"></section>
+        <section data-background-color="#000">
+          <div class="ui5con-title ui5con-left">
+            <div>Reusable Components</div>
+            <div class="ui5con-orange">Deep Dive</div>
+          </div>
 
-				<section data-background-color="#000">
-					<div class="ui5con-title ui5con-left">
-						<div>Reusable Components</div>
-						<div class="ui5con-orange">Deep Dive</div>
-					</div>
+          <div class="ui5con-logo"></div>
 
-					<div class="ui5con-logo"></div>
+          <div class="ui5con-speakertitle">
+            Robin Panneels, Canguru Solutions<br />
+            February 14, 2020
+          </div>
+        </section>
 
-					<div class="ui5con-speakertitle">
-						Robin Panneels, Canguru Solutions<br>
-						February 14, 2020
-					</div>
-				</section>
+        <section data-background-color="white">
+          <div>
+            <img src="images/rpanneel.jpg" alt="Avatar" class="avatar" />
+            <!--<img src="images/canguru-logo-long.jpg">-->
+            <h2>I&apos;m Robin Panneels</h2>
+            <p>Technical Consultant at Canguru Solutions</p>
+            <p>
+              <small
+                ><a href="https://twitter.com/rpanneel">@rpanneel</a></small
+              >
+              <br />
+              <small
+                >Grab this session from
+                <a
+                  href="https://github.com/rpanneel/UI5-Components-Lessons-Learned"
+                  >GitHub</a
+                ></small
+              >
+            </p>
+          </div>
+        </section>
 
-				<section data-background-color="white">
-					<div>
-						<img src="images/rpanneel.jpg" alt="Avatar" class="avatar">
-						<!--<img src="images/canguru-logo-long.jpg">-->
-						<h2>I&apos;m Robin Panneels</h2>
-						<p>Technical Consultant at Canguru Solutions</p>
-						<p>
-							<small><a href="https://twitter.com/rpanneel">@rpanneel</a></small>
-							<br />
-							<small>Grab this session from <a href="https://github.com/rpanneel/UI5-Components-Lessons-Learned">GitHub</a></small>
-						</p>
-					</div>
-				</section>
+        <section data-background-color="white">
+          <h3 class="ui5con-divider">
+            Who already implemented reusable Components?
+          </h3>
+        </section>
 
-				<section data-background-color="white">
-					<h3 class="ui5con-divider">Who already implemented reusable Components?</h3>
-				</section>
+        <section data-background-color="white" data-transition="zoom">
+          <h3 class="ui5con-divider">
+            What is a <span class="ui5con-orange">Component?</span>
+          </h3>
+        </section>
 
-				<section data-background-color="white" data-transition="zoom">
-					<h3 class="ui5con-divider">What is a <span class="ui5con-orange">Component?</span></h3>
-				</section>
+        <section data-background-color="white">
+          <h3>
+            Every <span class="ui5con-orange">UI5 application</span> is a
+            <span class="ui5con-orange">Component</span>!
+          </h3>
+          <p class="fragment">Because we always extend:</p>
+          <p class="fragment">
+            <a
+              href="https://ui5.sap.com/#/api/sap.ui.core.Component"
+              target="_blank"
+              >sap.ui.core.Component</a
+            >
+          </p>
+          <p class="fragment">or</p>
+          <p class="fragment">
+            <a
+              href="https://ui5.sap.com/#/api/sap.ui.core.UIComponent"
+              target="_blank"
+              >sap.ui.core.UIComponent</a
+            >
+          </p>
+        </section>
 
-				<section data-background-color="white">
-					<h3>Every <span class="ui5con-orange">UI5 application</span> is a <span class="ui5con-orange">Component</span>!</h3>
-					<p class="fragment">Because we always extend:</p>
-					<p class="fragment"><a href="https://ui5.sap.com/#/api/sap.ui.core.Component" target="_blank">sap.ui.core.Component</a></p>
-					<p class="fragment">or</p>
-					<p class="fragment"><a href="https://ui5.sap.com/#/api/sap.ui.core.UIComponent" target="_blank">sap.ui.core.UIComponent</a></p>
-				</section>
+        <section data-background-color="white">
+          <h3>UI5 applications can be reused in another application</h3>
+          <p class="fragment">
+            In this case we have a <span class="ui5con-orange">rootView</span>
+          </p>
+        </section>
 
-				<section data-background-color="white">
-					<h3>UI5 applications can be reused in another application</h3>
-					<p class="fragment">In this case we have a <span class="ui5con-orange">rootView</span></p>
-				</section>
-
-				<section data-background-color="white">
-					<h3>But we can also expose a <span class="ui5con-orange">Control</span></h3>
-					See metadata of sap.ui.core.UIComponent:
-					<pre>
+        <section data-background-color="white">
+          <h3>
+            But we can also expose a <span class="ui5con-orange">Control</span>
+          </h3>
+          See metadata of sap.ui.core.UIComponent:
+          <pre>
 						<code data-trim data-noescape data-line-numbers="4,13" class="stretch">
 							...
 							metadata : {
@@ -244,110 +284,153 @@
 							}
 						</code>
 					</pre>
-				</section>
+        </section>
 
+        <section data-background-color="white">
+          <h3>Use-cases for reusable Components</h3>
+          <ul>
+            <li class="fragment roll-in">Search helps/Value Help Dialogs</li>
+            <li class="fragment roll-in">Information Dialog views</li>
+            <li class="fragment roll-in">Lists and Tables</li>
+          </ul>
+          <br />
+          <small class="fragment"
+            >More information can be found on
+            <a
+              href="https://www.nabisoft.com/tutorials/sapui5/implementing-re-use-components-in-sapui5-libraries-and-consuming-them-in-sapui5-apps#Step3"
+              >Nabi Zamani's website</a
+            ></small
+          >
+        </section>
 
-				<section data-background-color="white">
-					<h3>Use-cases for reusable Components</h3>
-					<ul>
-						<li class="fragment roll-in">Search helps/Value Help Dialogs</li>
-						<li class="fragment roll-in">Information Dialog views</li>
-						<li class="fragment roll-in">Lists and Tables</li>
-					</ul>
-					<br />
-					<small class="fragment">More information can be found on <a href="https://www.nabisoft.com/tutorials/sapui5/implementing-re-use-components-in-sapui5-libraries-and-consuming-them-in-sapui5-apps#Step3">Nabi Zamani's website</a></small>
-				</section>
+        <section data-background-image="images/lego-bricks.png"></section>
 
-				<section data-background-image="images/lego-bricks.png">
-				</section>
+        <section data-background-color="white">
+          <h3>Components <span class="ui5con-orange">Vs</span> Controls</h3>
+          <p class="fragment roll-in">
+            Components can create models and work with Back-ends
+          </p>
+          <p class="fragment roll-in">Controls can't</p>
+        </section>
 
-				<section data-background-color="white">
-					<h3>Components <span class="ui5con-orange">Vs</span> Controls</h3>
-					<p class="fragment roll-in">Components can create models and work with Back-ends</p>
-					<p class="fragment roll-in">Controls can't</p>
-				</section>
+        <section data-background-color="white">
+          <h3>
+            Reusable Component example:
+            <span class="ui5con-orange">AttachmentManager</span>
+          </h3>
+          <h4 class="fragment roll-in">Initial goals:</h4>
+          <ul>
+            <li class="fragment roll-in">Wrapper for UploadCollection</li>
+            <li class="fragment roll-in">UploadSet implementation</li>
+            <li class="fragment roll-in">
+              Standardize working with attachments and links
+            </li>
+          </ul>
+        </section>
 
-				<section data-background-color="white">
-					<h3>Reusable Component example: <span class="ui5con-orange">AttachmentManager</span></h3>
-					<h4 class="fragment roll-in">Initial goals:</h4>
-					<ul>
-						<li class="fragment roll-in">Wrapper for UploadCollection</li>
-						<li class="fragment roll-in">UploadSet implementation</li>
-						<li class="fragment roll-in">Standardize working with attachments and links</li>
-					</ul>
-				</section>
+        <section data-background-color="white">
+          <h3>You can also go to far with implementing reusable components</h3>
+          <p class="fragment roll-in">
+            You can propagate the models from the application to the
+            <a
+              href="https://ui5.sap.com/#/api/sap.ui.core.ComponentContainer%23controlProperties"
+              >ComponentContainer</a
+            >
+            <br />
+            So the risk exists that you make a Reusable Component app
+            dependent...
+          </p>
+        </section>
 
-				<section data-background-color="white">
-					<h3>You can also go to far with implementing reusable components</h3>
-					<p class="fragment roll-in">
-						You can propagate the models from the application to the <a href="https://ui5.sap.com/#/api/sap.ui.core.ComponentContainer%23controlProperties">ComponentContainer</a>
-						<br />
-						So the risk exists that you make a Reusable Component app dependent...
-					</p>
-				</section>
+        <section data-background-color="white">
+          <img src="images/component-too-far1.png" style="border: 0;" />
+        </section>
 
-				<section data-background-color="white">
-					<img src="images/component-too-far1.png" style="border: 0;">
-				</section>
+        <section data-background-color="white">
+          <img src="images/component-too-far2.png" style="border: 0;" />
+        </section>
 
-				<section data-background-color="white">
-					<img src="images/component-too-far2.png" style="border: 0;">
-				</section>
+        <section data-background-color="white">
+          <h3>
+            Routing in <span class="ui5con-orange">Nested Components</span> in
+            1.60
+          </h3>
+          <p class="fragment">
+            <a
+              href="https://blogs.sap.com/2019/08/23/ui5-nested-routing-with-reusable-components/"
+              >Tom Van Doorslaer's post</a
+            >
+          </p>
+        </section>
 
-				<section data-background-color="white">
-					<h3>Routing in <span class="ui5con-orange">Nested Components</span> in 1.60</h3>
-					<p class="fragment"><a href="https://blogs.sap.com/2019/08/23/ui5-nested-routing-with-reusable-components/">Tom Van Doorslaer's post</a></p>
-				</section>
+        <section data-background-color="white">
+          <h3>
+            Routing in <span class="ui5con-orange">Nested Components</span> from
+            1.72
+          </h3>
+          <p class="fragment">
+            <a
+              href="https://blogs.sap.com/2020/02/05/ui5er-buzz-46-routing-with-nested-components/"
+              >Jiawei Cao's post</a
+            >
+          </p>
+        </section>
 
-				<section data-background-color="white">
-					<h3>Routing in <span class="ui5con-orange">Nested Components</span> from 1.72</h3>
-					<p class="fragment"><a href="https://blogs.sap.com/2020/02/05/ui5er-buzz-46-routing-with-nested-components/">Jiawei Cao's post</a></p>
-				</section>
+        <section data-background-color="#000">
+          <div class="ui5con-thankyou ui5con-orange">Thank you!</div>
+          <div class="ui5con-logo"></div>
+          <div class="ui5con-speakerdetails">
+            Contact information:<br /><br />
+            Robin Panneels<br />
+            Technical Consultant at Canguru Solutions<br />
+            Twitter:
+            <a href="https://www.twitter.com/rpanneel" target="_blank"
+              >@rpanneel</a
+            ><br />
+          </div>
+        </section>
+      </div>
+    </div>
 
-				<section data-background-color="#000">
-					<div class="ui5con-thankyou ui5con-orange">Thank you!</div>
-					<div class="ui5con-logo"></div>
-					<div class="ui5con-speakerdetails">
-							Contact information:<br><br>
-							Robin Panneels<br>
-							Technical Consultant at Canguru Solutions<br>
-							Twitter: <a href="https://www.twitter.com/rpanneel" target="_blank">@rpanneel</a><br>
-					</div>
-				</section>
-			</div>
-		</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/reveal.js"></script>
 
-		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				slideNumber: true,
-				hash: true,
-				history: true,
-				width: 1920,
-				height: 1080,
-				center: true, // when changing to "false", add the CSS class "ui5con-aligntop" (and optionally ui5con-alignleft") to the body tag in the HTML
-				transition: 'convex',         // none/fade/slide/convex/concave/zoom
-				backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-			Reveal.addEventListener( 'slidechanged', function( event ) {
-				const sBlack = "#000";
-				if ($(".present").attr("data-background-color") === sBlack) {
-					$(".flexso").addClass("flexso_white");
-				} else {
-					$(".flexso").removeClass("flexso_white");
-				}
-			});
-		</script>
-	</body>
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        slideNumber: true,
+        hash: true,
+        history: true,
+        width: 1920,
+        height: 1080,
+        center: true, // when changing to "false", add the CSS class "ui5con-aligntop" (and optionally ui5con-alignleft") to the body tag in the HTML
+        transition: "convex", // none/fade/slide/convex/concave/zoom
+        backgroundTransition: "fade", // none/fade/slide/convex/concave/zoom
+        dependencies: [
+          { src: "plugin/markdown/marked.js" },
+          { src: "plugin/markdown/markdown.js" },
+          { src: "plugin/notes/notes.js", async: true },
+          { src: "plugin/highlight/highlight.js", async: true }
+        ]
+      });
+      Reveal.addEventListener(
+        "first_slide",
+        function() {
+          // Add white logo on first slide
+          $(".canguru").addClass("canguru_white");
+        },
+        false
+      );
+      Reveal.addEventListener("slidechanged", function(event) {
+        const black = "#000";
+        if ($(".present").attr("data-background-color") === black) {
+          $(".canguru").addClass("canguru_white");
+        } else {
+          $(".canguru").removeClass("canguru_white");
+        }
+      });
+    </script>
+  </body>
 </html>
